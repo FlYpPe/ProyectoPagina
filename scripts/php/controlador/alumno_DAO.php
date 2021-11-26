@@ -14,14 +14,14 @@
 
         // ========= ALTAS 
         public function agregarAlumno($nc, $n, $pa, $sa, $e, $s, $c){
-            $sql = "INSERT INTO Alumnos VALUES ('$nc', '$n', '$pa', '$sa', $e, $s, '$c')";
+            $sql = "INSERT INTO alumnos VALUES ('$nc', '$n', '$pa', '$sa', $e, $s, '$c')";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
 
         //====== BAJAS
         public function eliminarAlumno($nc){
-            $sql = "DELETE FROM Alumnos WHERE Num_Control='$nc'";
+            $sql = "DELETE FROM alumnos WHERE Num_Control='$nc'";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
@@ -33,11 +33,21 @@
 
         //======CONSULTAS
         public function mostrarAlumnos(){
-            $sql = "SELECT * FROM Alumnos";
+            $sql = "SELECT * FROM alumnos";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
 
+        public function modificarAlumno($nc, $n, $pa, $sa, $e, $s, $c){
+
+        $sql = "UPDATE `alumnos` SET `Nombre` = '$n', `Primer_Ap` = '$pa', `Segundo_AP` = '$sa',
+         `Edad` = $e, `Semestre` = $s, `Carrera` = '$c' WHERE `alumnos`.`Num_Control` = '$nc'";
+         $res = mysqli_query($this->conexion->getConexion(), $sql);
+         return $res;
+        }
+
     }//class Alumno
+
+    
 
 ?>

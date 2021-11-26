@@ -29,7 +29,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">MODIFICAR</a>
+              <a class="nav-link" href="formulario_consultas.php" tabindex="-1" aria-disabled="true">Consultas</a>
             </li>
 
             <li class="nav-item dropdown">

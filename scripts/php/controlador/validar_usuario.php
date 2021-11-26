@@ -22,7 +22,7 @@
             $p_cifrado = sha1($p);
 
             //PREPARED STATEMENTS para evitar SQL INJECTION
-            $sql = "SELECT * FROM usuarios WHERE usuario='$u_cifrado' AND password='$p_cifrado'";
+            $sql = "SELECT * FROM Usuarios WHERE usuario='$u_cifrado' AND password='$p_cifrado'";
 
             $res = mysqli_query($conexion, $sql);
 

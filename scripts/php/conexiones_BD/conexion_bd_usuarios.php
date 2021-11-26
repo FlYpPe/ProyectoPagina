@@ -2,9 +2,9 @@
     class ConexionBDUsuarios{
         private $conexion;
         private $host = 'localhost:3306';
-        private $usuario = 'salvatore'; //MySQL
-        private $contraseña = 'salvatore'; //MySQL
-        private $bd = 'BD_Usuarios_Escuela';
+        private $usuario = 'root'; //MySQL
+        private $contraseña = ''; //MySQL
+        private $bd = 'Usuarios';
 
         public function __construct(){
             //Java this.conexion =

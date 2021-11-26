@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION['u_valido']==false){
+    //header('location:pagina_acceso_prohibido.html');
+    header('location: login.html');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +74,7 @@
                             <td>".$fila['Num_Control']."</td>".
                             "<td>".$fila['Nombre']."</td>".
                             "<td>".$fila['Primer_Ap']."</td>".
-                            "<td>".$fila['Segundo_Ap']."</td>".
+                            "<td>".$fila['Segundo_AP']."</td>".
                             "<td>".$fila['Edad']."</td>".
                             "<td>".$fila['Semestre']."</td>".
                             "<td>".$fila['Carrera']."</td>".

@@ -41,20 +41,22 @@ require_once('header.php');
                                 <th>Edad</th>
                                 <th>Semestre</th>
                                 <th>Carrera</th>
+                                <th>opciones</th>
                                 
                             </tr>
                         </thead>";
             
 
             while($fila = mysqli_fetch_assoc($res)){
-                printf("<tr>
+                printf("<tr id = >
                 <td>".$fila['Num_Control']."</td>".
                 "<td>".$fila['Nombre']."</td>".
                 "<td>".$fila['Primer_Ap']."</td>".
                 "<td>".$fila['Segundo_AP']."</td>".
                 "<td>".$fila['Edad']."</td>".
                 "<td>".$fila['Semestre']."</td>".
-                "<td>".$fila['Carrera']."</td>"
+                "<td>".$fila['Carrera']."</td>".
+                "<td><a href='formulario_modificacion.php?id=". $fila["Num_Control"] ."'>Editar</a></td>"
                                             
                 );
 
@@ -65,5 +67,6 @@ require_once('header.php');
         }
         echo "</table> </div> </div>";
     ?>
+    
 </body>
 </html>

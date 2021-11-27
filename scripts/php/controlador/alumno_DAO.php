@@ -30,18 +30,22 @@
 
         //======CAMBIOS
 
-
         //======CONSULTAS
         public function mostrarAlumnos(){
             $sql = "SELECT * FROM alumnos";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
+        public function mostrarAlumnosPorNc($nc){
+            $sql = "SELECT * FROM alumnos where Num_Control ='$nc'";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
 
         public function modificarAlumno($nc, $n, $pa, $sa, $e, $s, $c){
-
-        $sql = "UPDATE `alumnos` SET `Nombre` = '$n', `Primer_Ap` = '$pa', `Segundo_AP` = '$sa',
-         `Edad` = $e, `Semestre` = $s, `Carrera` = '$c' WHERE `alumnos`.`Num_Control` = '$nc'";
+        
+        $sql = "UPDATE alumnos SET Nombre = '$n', Primer_Ap = '$pa', Segundo_AP = '$sa',
+         Edad = $e, Semestre = $s, Carrera = '$c' WHERE Num_Control = '$nc'";
          $res = mysqli_query($this->conexion->getConexion(), $sql);
          return $res;
         }

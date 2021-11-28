@@ -17,10 +17,12 @@ include('../controlador/alumno_DAO.php');
     $e = $_POST['e'];
     $s = $_POST['s'];
     $c = $_POST['c'];
+
+
         $aDAO = new AlumnoDAO();
 
-       $resultado = $aDAO->modificarAlumno($nc, $n, $pa, $sa, $e, $s, $c);
-        if ($resultado) {
+       $resu = $aDAO->modificarAlumno($nc, $n, $pa, $sa, $e, $s, $c);
+        if ($resu) {
             header('location:../vista/formulario_consultas.php');
         }else {
             header('location:../vista/formulario_consultas.php');

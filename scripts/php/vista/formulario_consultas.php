@@ -41,7 +41,7 @@ require_once('header.php');
                                 <th>Edad</th>
                                 <th>Semestre</th>
                                 <th>Carrera</th>
-                                <th>opciones</th>
+                                <th>Opciones</th>
                                 
                             </tr>
                         </thead>";
@@ -56,7 +56,7 @@ require_once('header.php');
                 "<td>".$fila['Edad']."</td>".
                 "<td>".$fila['Semestre']."</td>".
                 "<td>".$fila['Carrera']."</td>".
-                "<td><a href='formulario_modificacion.php?id=". $fila["Num_Control"] ."'>Editar</a></td>"
+                "<td><a href='formulario_modificacion.php?id=". $fila["Num_Control"] ."'>Edi</a></td>"
                                             
                 );
 

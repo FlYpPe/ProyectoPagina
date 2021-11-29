@@ -1,3 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Northwind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<header class="header-area overlay">
+    <nav class="navbar navbar-expand-md navbar-dark">
+		<div class="container">
+			<a href="#" class="navbar-brand">Northwind Admin</a>
+			
+			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+			</button>
+			
+			<div id="main-nav" class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto">
+					<li><a href="#" class="nav-item nav-link active">Inicio</a></li>
+					<li class="dropdown">
+						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Pedidos</a>
+						<div class="dropdown-menu">
+							<a href="fomulario_altas.php" class="dropdown-item">Realizar pedidos</a>
+							<a href="formulario_consultas.php" class="dropdown-item">Organizar pedidos</a>
+							<a href="#" class="dropdown-item"></a>
+						</div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Portfolio</a>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item">Dropdown Item 1</a>
+							<a href="#" class="dropdown-item">Dropdown Item 2</a>
+							<a href="#" class="dropdown-item">Dropdown Item 3</a>
+							<a href="#" class="dropdown-item">Dropdown Item 4</a>
+							<a href="#" class="dropdown-item">Dropdown Item 5</a>
+						</div>
+					</li>
+					<li><a href="#" class="nav-item nav-link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+
+  <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+<style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 html {
@@ -69,7 +127,7 @@ p {
 }
 .header-area {
   position: relative;
-  height: 100vh;
+  height: 70px;
   background: #5bc0de;
   background-attachment: fixed;
   background-position: center center;
@@ -319,3 +377,43 @@ p {
     transform: scaleY(1);
   }
 }
+
+</style>
+
+<script type="text/javascript">
+jQuery(function($) {
+    $(window).on('scroll', function() {
+		if ($(this).scrollTop() >= 200) {
+			$('.navbar').addClass('fixed-top');
+		} else if ($(this).scrollTop() == 0) {
+			$('.navbar').removeClass('fixed-top');
+		}
+	});
+	
+	function adjustNav() {
+		var winWidth = $(window).width(),
+			dropdown = $('.dropdown'),
+			dropdownMenu = $('.dropdown-menu');
+		
+		if (winWidth >= 768) {
+			dropdown.on('mouseenter', function() {
+				$(this).addClass('show')
+					.children(dropdownMenu).addClass('show');
+			});
+			
+			dropdown.on('mouseleave', function() {
+				$(this).removeClass('show')
+					.children(dropdownMenu).removeClass('show');
+			});
+		} else {
+			dropdown.off('mouseenter mouseleave');
+		}
+	}
+	
+	$(window).on('resize', adjustNav);
+	
+	adjustNav();
+});
+</script>
+</body>
+</html>

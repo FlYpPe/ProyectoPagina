@@ -17,7 +17,7 @@
 <body>
     
     <?php
-        require_once('header.php');
+        require_once('headAdm.php');
     ?>
 
     <h3 style="background-color:lightgreen;

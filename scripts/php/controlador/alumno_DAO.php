@@ -49,6 +49,13 @@
          $res = mysqli_query($this->conexion->getConexion(), $sql);
          return $res;
         }
+        public function modificarPedido($nc, $n, $pa, $sa, $e, $s, $c){
+        
+            $sql = "UPDATE alumnos SET Nombre = '$n', Primer_Ap = '$pa', Segundo_AP = '$sa',
+             Edad = $e, Semestre = $s, Carrera = '$c' WHERE Num_Control = '$nc'";
+             $res = mysqli_query($this->conexion->getConexion(), $sql);
+             return $res;
+            }
 
     }//class Alumno
 

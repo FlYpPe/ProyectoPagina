@@ -29,8 +29,8 @@
 					<li class="dropdown">
 						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Administración</a>
 						<div class="dropdown-menu">
-							<a href="scripts/php/vista/login.html" class="dropdown-item">Dropdown Item 1</a>
-							<a href="#" class="dropdown-item">Dropdown Item 2</a>
+							<a href="log.php" class="dropdown-item">Acceder</a>
+							<a href="registro.php" class="dropdown-item">Registrarse</a>
 							<a href="#" class="dropdown-item">Dropdown Item 3</a>
 						</div>
 					</li>

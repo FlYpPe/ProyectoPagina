@@ -21,7 +21,7 @@ require_once('headAdm.php');
 <?php
         include('../controlador/alumno_DAO.php');
         $aDAO = new AlumnoDAO();
-        $res = $aDAO->mostrarAlumnos();
+        $res = $aDAO->mostrarProductos();
        
         //var_dump($res);
 
@@ -34,14 +34,15 @@ require_once('headAdm.php');
                    echo "<div><div> <br><table id='tabla' class='display table table-hover text-nowrap' style='width:50%'>
                         <thead>
                             <tr>
-                                <th>Numero control</th>
+                                <th>Id</th>
                                 <th>Nombre</th>
-                                <th>Primer_Ap</th>
-                                <th>Segundo_AP</th>
-                                <th>Edad</th>
-                                <th>Semestre</th>
-                                <th>Carrera</th>
-                                <th>Opciones</th>
+                                <th>Proveedor</th>
+                                <th>Categoria</th>
+                                <th>Cant/Unidad</th>
+                                <th>Precio Uitario</th>
+                                <th>Unid. en Stock</th>
+                                <th>Descontinuado</th>
+                                <th>Modificacion</th>
                                 
                             </tr>
                         </thead>";
@@ -49,14 +50,15 @@ require_once('headAdm.php');
 
             while($fila = mysqli_fetch_assoc($res)){
                 printf("<tr id = >
-                <td>".$fila['Num_Control']."</td>".
-                "<td>".$fila['Nombre']."</td>".
-                "<td>".$fila['Primer_Ap']."</td>".
-                "<td>".$fila['Segundo_AP']."</td>".
-                "<td>".$fila['Edad']."</td>".
-                "<td>".$fila['Semestre']."</td>".
-                "<td>".$fila['Carrera']."</td>".
-                "<td><a href='formulario_modificacion.php?id=". $fila["Num_Control"] ."'>Edi</a></td>"
+                <td>".$fila['IdProducto']."</td>".
+                "<td>".$fila['NombreProducto']."</td>".
+                "<td>".$fila['IdProveedor']."</td>".
+                "<td>".$fila['IdCategoria']."</td>".
+                "<td>".$fila['CantidadPorUnidad']."</td>".
+                "<td>".$fila['PrecioUnitario']."</td>".
+                "<td>".$fila['UnidadesEnStock']."</td>".
+                "<td>".$fila['Descontinuado']."</td>".
+                "<td><a href='formulario_modificacion.php?id=". $fila["IdProducto"] ."'>Edi</a></td>"
                                             
                 );
 

@@ -9,8 +9,7 @@
     //Validacion ...(PENDIENTE)
 
     $aDAO = new AlumnoDAO();
-    $res = $aDAO->agregarAlumno('3', '2', '2', '2', 2, 2, '2');
-
+    $res = $aDAO->agregarProducto(2, 'C. Cerdo 3', 1, 1, '15', 10, 100, 'no');
     if($res){
         //echo "YA CASI SOY INGENIERO INMORTAL !!!!";
         header('location:../vista/fomulario_altas.php');

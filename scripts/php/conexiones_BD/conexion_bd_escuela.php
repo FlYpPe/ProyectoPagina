@@ -4,7 +4,7 @@
         private $host = 'localhost:3306';
         private $usuario = 'root'; //MySQL
         private $contraseña = ''; //MySQL
-        private $bd = 'bd_escuela';
+        private $bd = 'northwind';
 
         public function __construct(){
             //Java this.conexion =

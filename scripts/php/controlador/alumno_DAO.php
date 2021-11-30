@@ -18,6 +18,23 @@
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
+        
+        public function agregarProducto($id, $n, $idP, $idC, $cu, $pu, $us, $d){
+            $sql = "INSERT INTO productos Values ('$id', '$n', '$idP', '$idC', '$cu', '$pu', '$us', '$d')";
+             $res = mysqli_query($this->conexion->getConexion(), $sql);
+             return $res;
+         }
+
+         public function mostrarProductos(){
+            $sql = "SELECT * FROM productos";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
+        public function mostrarProductosPorId($nc){
+            $sql = "SELECT * FROM productos where IdProducto ='$nc'";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
 
         //====== BAJAS
         public function eliminarAlumno($nc){
@@ -61,4 +78,4 @@
 
     
 
-?>
+?>  

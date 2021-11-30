@@ -11,8 +11,9 @@
     <style>
         body {
             background-color: #f9f9fa
+            font-size: 1.9rem;
         }
-
+        
         .flex {
             -webkit-box-flex: 1;
             -ms-flex: 1 1 auto;
@@ -64,17 +65,17 @@
     </style>
 </head>
 
-<body  class='snippet-body'>
+<body   style="font-size: 1.9rem">
 
 <?php
         require_once('header.php');
     ?>  
 
-    <div id="content" class="flex">
+    <div  class="flex">
         <div class="">
             <div class="page-content page-container" id="page-content">
                 <div class="padding">
-                    <div class="row">
+                    <div class="row" style="margin-left: 250px">
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header"><strong>Login</strong></div>
@@ -110,9 +111,7 @@
     </div>
     <script type='text/javascript'
         src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
-    <script type='text/javascript' src=''></script>
-    <script type='text/javascript' src=''></script>
-    <script type='text/Javascript'></script>
+
 </body>
 
 </html>

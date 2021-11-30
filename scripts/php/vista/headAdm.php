@@ -27,10 +27,10 @@
 				<ul class="navbar-nav ml-auto">
 					<li><a href="#" class="nav-item nav-link active">Inicio</a></li>
 					<li class="dropdown">
-						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Pedidos</a>
+						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Productos</a>
 						<div class="dropdown-menu">
-							<a href="fomulario_altas.php" class="dropdown-item">Realizar pedidos</a>
-							<a href="formulario_consultas.php" class="dropdown-item">Organizar pedidos</a>
+							<a href="fomulario_altas.php" class="dropdown-item">Registrar productos</a>
+							<a href="formulario_consultas.php" class="dropdown-item">Administrar productos</a>
 							<a href="#" class="dropdown-item"></a>
 						</div>
 					</li>

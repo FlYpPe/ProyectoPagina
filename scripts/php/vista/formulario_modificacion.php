@@ -16,12 +16,15 @@
         input{
             padding: 0;
             margin: 0;
+            width: 100px;
         }
+        
         th, td{
             
             padding: 0;
             margin: 0;
         }
+        
     </style>
 </head>
 <body>
@@ -33,7 +36,7 @@ require_once('headAdm.php');
         include('../controlador/alumno_DAO.php');
         $aDAO = new AlumnoDAO();
         $id = $_GET["id"];
-        $res = $aDAO->mostrarAlumnosPorNc($id);
+        $res = $aDAO->mostrarProductosPorId($id);
         $ruta = "../controlador/modificar.php";
         //var_dump($res);
 
@@ -46,14 +49,14 @@ require_once('headAdm.php');
                    echo "<form action='modificar.php' method='post' ><br><table id='tabla' class='display table table-hover text-nowrap' style='width:50%'>
                         <thead>
                             <tr>
-                                <th>Nombre</th> 
-                                <th>Primer_Ap</th>
-                                <th>Segundo_AP</th>
-                                <th>Edad</th>
-                                <th>Semestre</th>
-                                <th>Carrera</th>
-                                <th>opciones</th>
-                                
+                            <th>Nombre</th>
+                            <th>Proveedor</th>
+                            <th>Categoria</th>
+                            <th>Cant/Unidad</th>
+                            <th>Precio Uitario</th>
+                            <th>Unid. en Stock</th>
+                            <th>Descontinuado</th>
+                            <th>Modificar</th>
                             </tr>
                         </thead>";
             
@@ -62,21 +65,23 @@ require_once('headAdm.php');
                 printf("<tr>
                 <td>
 
-                <input type='hidden' value='". $fila["Num_Control"]."' name='num'></input>
+                <input type='hidden' value='". $fila["IdProducto"]."' name='num'></input>
 
-                <input type='text' value='". $fila["Nombre"]."' name='nom'></input>
+                <input type='text' value='". $fila["NombreProducto"]."' name='nom'></input>
                 
                 </td>".
 
-                "<td><input type='text' value='". $fila["Primer_Ap"]."' name='pa'></input></td>".
+                "<td><input type='text' value='". $fila["IdProveedor"]."' name='pa'></input></td>".
 
-                "<td><input type='text' value='". $fila["Segundo_AP"]."' name='sa'></input></td>".
+                "<td><input type='text' value='". $fila["IdCategoria"]."' name='sa'></input></td>".
 
-                "<td><input type='text' value='". $fila["Edad"]."' name='e'></input></td>".
+                "<td><input type='text' value='". $fila["CantidadPorUnidad"]."' name='e'></input></td>".
 
-                "<td><input type='text' value='". $fila["Semestre"]."' name='s'></input></td>".
+                "<td><input type='text' value='". $fila["PrecioUnitario"]."' name='s'></input></td>".
 
-                "<td><input type='text' value='". $fila["Carrera"]."'name='c'></input></td>".
+                "<td><input type='text' value='". $fila["UnidadesEnStock"]."'name='c'></input></td>".
+
+                "<td><input type='text' value='". $fila["Descontinuado"]."'name='c'></input></td>".
 
                 "<td><input type='submit' value='Actualizar'></input></td>"                       
                 

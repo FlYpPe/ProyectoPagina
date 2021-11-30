@@ -12,8 +12,7 @@
 
 
         public function __construct(){
-
-
+            
             //Java this.conexion =
             $this->conexion = mysqli_connect($this->host, $this->usuario, $this->contraseña, $this->bd);
             if(!$this->conexion)
@@ -32,3 +31,4 @@
         }
     }
 ?>
+<?php

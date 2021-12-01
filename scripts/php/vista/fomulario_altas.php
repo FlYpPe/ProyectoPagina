@@ -1,11 +1,3 @@
-<?php
-  session_start();
-  if($_SESSION['u_valido']==false){
-    //header('location:pagina_acceso_prohibido.html');
-    header('location: login.html');
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,20 +27,30 @@
     <form action="../controlador/procesar_altas.php" method="POST" >
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Numero de control</label>
+          <label for="inputEmail4">Id Producto</label>
           <input type="text" class="form-control" id="inputEmail4" placeholder="Solo numeros">
         </div>
         <div class="form-group col-md-6">
-          <label for="inputPassword4">Nombre</label>
+          <label for="inputPassword4">Nombre Producto</label>
           <input type="text" class="form-control" id="inputPassword4" placeholder="Solo letras">
         </div>
-      </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">ID Proveedor</label>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="Solo numeros">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nombre Producto</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Solo letras">
+        </div>
+        </div>
       <div class="form-group">
-        <label for="inputAddress">Primer Apellido</label>
+        <label for="inputAddress">ID Proveedor</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
       </div>
       <div class="form-group">
-        <label for="inputAddress2">Segundo Apellido</label>
+        <label for="inputAddress2">ID Categoria</label>
         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
       <div class="form-row">

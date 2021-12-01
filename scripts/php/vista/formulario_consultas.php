@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  if($_SESSION['u_valido']==false){
-    //header('location:pagina_acceso_prohibido.html');
-    header('location: login.html');
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +51,7 @@ require_once('headAdm.php');
                 "<td>".$fila['PrecioUnitario']."</td>".
                 "<td>".$fila['UnidadesEnStock']."</td>".
                 "<td>".$fila['Descontinuado']."</td>".
-                "<td><a href='formulario_modificacion.php?id=". $fila["IdProducto"] ."'>Edi</a></td>"
+                "<td><a href='formulario_modificacion.php?id=". $fila["IdProducto"] ."'>Editar</a></td>"
                                             
                 );
 

@@ -65,27 +65,27 @@ require_once('headAdm.php');
                 printf("<tr>
                 <td>
 
-                <input type='hidden' value='". $fila["IdProducto"]."' name='num'></input>
+                <input type='hidden' value='". $fila["IdProducto"]."' name='id'></input>
 
-                <input type='text' value='". $fila["NombreProducto"]."' name='nom'></input>
+                <input type='text' value='". $fila["NombreProducto"]."' name='n'></input>
                 
                 </td>".
 
-                "<td><input type='text' value='". $fila["IdProveedor"]."' name='pa'></input></td>".
+                "<td><input type='text' value='". $fila["IdProveedor"]."' name='idP'></input></td>".
 
-                "<td><input type='text' value='". $fila["IdCategoria"]."' name='sa'></input></td>".
+                "<td><input type='text' value='". $fila["IdCategoria"]."' name='idC'></input></td>".
 
-                "<td><input type='text' value='". $fila["CantidadPorUnidad"]."' name='e'></input></td>".
+                "<td><input type='text' value='". $fila["CantidadPorUnidad"]."' name='cu'></input></td>".
 
-                "<td><input type='text' value='". $fila["PrecioUnitario"]."' name='s'></input></td>".
+                "<td><input type='text' value='". $fila["PrecioUnitario"]."' name='pu'></input></td>".
 
-                "<td><input type='text' value='". $fila["UnidadesEnStock"]."'name='c'></input></td>".
+                "<td><input type='text' value='". $fila["UnidadesEnStock"]."'name='us'></input></td>".
 
-                "<td><input type='text' value='". $fila["Descontinuado"]."'name='c'></input></td>".
+                "<td><input type='text' value='". $fila["Descontinuado"]."'name='d'></input></td>".
 
                 "<td><input type='submit' value='Actualizar'></input></td>"                       
                 
-            );
+            );      
 
             }
 

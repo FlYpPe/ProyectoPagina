@@ -79,15 +79,15 @@
                             <div class="card">
                                 <div class="card-header"><strong>Registro</strong></div>
                                 <div class="card-body">
-                                    <form action="../controlador/validar_usuario.php" method="POST">
-                                        <div class="form-group"><label class="text-muted" for="exampleInputEmail1">Email
-                                                address</label><input  class="form-control"
-                                                id="exampleInputEmail1" type="email" aria-describedby="emailHelp"
+                                    <form action="../controlador/registrar_usuario.php" method="POST">
+                                        <div class="form-group"><label class="text-muted" for="exampleInputEmail1">Nombre usuario                                                
+                                            </label><input  class="form-control"
+                                                id="exampleInputEmail1"  aria-describedby="emailHelp"
                                                 placeholder="Enter email" name="caja_usuario"> <small id="emailHelp"
                                                 class="form-text text-muted">We don't share email with anyone</small>
                                         </div>
                                         <div class="form-group"><label class="text-muted"
-                                                for="exampleInputPassword1">Password</label><input type="password"
+                                                for="exampleInputPassword1">Contraseña</label><input type="password"
                                                 class="form-control" id="exampleInputPassword1" placeholder="Password" name="caja_contraseña">
                                             <small id="passwordHelp" class="form-text text-muted">your password is saved
                                                 in encrypted form</small></div>

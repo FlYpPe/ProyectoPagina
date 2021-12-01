@@ -1,4 +1,10 @@
-
+<?php
+  session_start();
+  if($_SESSION['u_valido']==false){
+    //header('location:pagina_acceso_prohibido.html');
+    header('location: login.html');
+  } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +31,7 @@
 			
 			<div id="main-nav" class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
-					<li><a href="#" class="nav-item nav-link active">Inicio</a></li>
+					<li><a href="#" class="nav-item nav-link active"><?php echo "Usuario: ".  $_SESSION['usuario']; ?></a></li>
 					<li class="dropdown">
 						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Productos</a>
 						<div class="dropdown-menu">
@@ -43,8 +49,10 @@
 							<a href="#" class="dropdown-item">Dropdown Item 4</a>
 							<a href="#" class="dropdown-item">Dropdown Item 5</a>
 						</div>
-					</li>
-					<li><a href="#" class="nav-item nav-link">Contact</a></li>
+					
+          <li><a href="../controlador/cerrar_sesion.php" class="nav-item nav-link active">Salir</a></li>
+          
+					
 				</ul>
 			</div>
 		</div>

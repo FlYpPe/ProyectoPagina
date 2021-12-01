@@ -17,11 +17,15 @@
             $sql = "INSERT INTO alumnos VALUES ('$nc', '$n', '$pa', '$sa', $e, $s, '$c')";
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
+
         }
         
         public function agregarProducto($id, $n, $idP, $idC, $cu, $pu, $us, $d){
-            $sql = "INSERT INTO productos Values ('$id', '$n', '$idP', '$idC', '$cu', '$pu', '$us', '$d')";
-             $res = mysqli_query($this->conexion->getConexion(), $sql);
+             $sql = "INSERT INTO productos (IdProducto, NombreProducto, IdProveedor, IdCategoria,
+             CantidadPorUnidad, PrecioUnitario, UnidadesEnStock, Descontinuado) VALUES (?,?,?,?,?,?,?,?)";
+             $resultado = mysqli_prepare($this->conexion->getConexion(), $sql);
+             $res = mysqli_stmt_bind_param($resultado, "isiisdis", $id, $n, $idP, $idC, $cu, $pu, $us, $d);
+             $res = mysqli_stmt_execute($resultado);
              return $res;
          }
 
@@ -35,6 +39,19 @@
             $res = mysqli_query($this->conexion->getConexion(), $sql);
             return $res;
         }
+
+        public function modificarProducto($id, $n, $idP, $idC, $cu, $pu, $us, $d){
+         $sql = "UPDATE productos SET NombreProducto = '$n', IdProveedor = $idP,
+          IdCategoria = $idC, CantidadPorUnidad = '$cu', PrecioUnitario = $pu,
+         UnidadesEnStock = $us, Descontinuado = '$d' WHERE IdProducto = $id;";
+         $res = mysqli_query($this->conexion->getConexion(), $sql);
+         return $res;
+        
+        }
+
+
+
+
 
         //====== BAJAS
         public function eliminarAlumno($nc){
@@ -59,13 +76,7 @@
             return $res;
         }
 
-        public function modificarAlumno($nc, $n, $pa, $sa, $e, $s, $c){
         
-        $sql = "UPDATE alumnos SET Nombre = '$n', Primer_Ap = '$pa', Segundo_AP = '$sa',
-         Edad = $e, Semestre = $s, Carrera = '$c' WHERE Num_Control = '$nc'";
-         $res = mysqli_query($this->conexion->getConexion(), $sql);
-         return $res;
-        }
         public function modificarPedido($nc, $n, $pa, $sa, $e, $s, $c){
         
             $sql = "UPDATE alumnos SET Nombre = '$n', Primer_Ap = '$pa', Segundo_AP = '$sa',

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+   
 </head>
 <body>
 <?php
@@ -65,6 +68,10 @@ require_once('headAdm.php');
     ?>
     <script src='confirmacion.js'></script>
     
+    <script>
+    var tabla = document.querySelector('#tabla');
+    var dataTable = new DataTable(tabla);
+</script>
 
 </body>
 </html>

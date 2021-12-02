@@ -55,6 +55,19 @@
             return $res;
         }
 
+        public function mostrarCategorias(){
+            $sql = "SELECT IdCategoria FROM categorias";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+            
+        }
+        public function mostrarProveedores(){
+            $sql = "SELECT IdProveedor FROM proveedores";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+            
+        }
+
 
 
 

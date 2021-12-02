@@ -66,12 +66,12 @@ require_once('headAdm.php');
         }
         echo "</table> </div> </div>";
     ?>
-    <script src='confirmacion.js'></script>
-    
+
+
     <script>
     var tabla = document.querySelector('#tabla');
     var dataTable = new DataTable(tabla);
 </script>
-
+<script src='confirmacion.js'></script>
 </body>
 </html>

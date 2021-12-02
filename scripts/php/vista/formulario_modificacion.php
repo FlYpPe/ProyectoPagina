@@ -24,9 +24,12 @@
 <body>
 <?php
 require_once('headAdm.php');
+
 ?>
 
 <?php
+
+       
         include('../controlador/alumno_DAO.php');
         $aDAO = new AlumnoDAO();
         $id = $_GET["id"];

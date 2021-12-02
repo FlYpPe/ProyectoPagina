@@ -28,7 +28,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Id Producto</label>
-          <input type="text" class="form-control" id="inputEmail4" placeholder="Solo numeros">
+          <input type="number" class="form-control" id="inputEmail4" placeholder="Solo numeros">
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Nombre Producto</label>
@@ -37,51 +37,77 @@
         </div>
         <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">ID Proveedor</label>
-          <input type="text" class="form-control" id="inputEmail4" placeholder="Solo numeros">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Nombre Producto</label>
-          <input type="text" class="form-control" id="inputPassword4" placeholder="Solo letras">
-        </div>
-        </div>
-      <div class="form-group">
-        <label for="inputAddress">ID Proveedor</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">ID Categoria</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">Edad</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="semestre">Semestre</label>
+          <label for="semestre">ID Proveedor</label>
           <select id="semestre" class="form-control">
-            <option selected>Elige opcion...</option>
             <?php
-              for ($i=0; $i <=12; $i++) { 
-                echo "<option>".$i."</option>";
-              }
+
+                  include('../controlador/alumno_DAO.php');
+                  $aDAO = new AlumnoDAO();
+                  
+                  $res = $aDAO->mostrarCategorias();
+                  
+
+                  if(mysqli_num_rows($res)>0){
+                    while($fila = mysqli_fetch_assoc($res)){
+                      echo "<option>". $fila["IdCategoria"] ."</option>";
+                    }
+
+                  }else{
+                    
+                }
+
             ?>
           </select>
         </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Carrera</label>
-          <input type="text" class="form-control" id="inputZip">
+        <div class="form-group col-md-6">
+          <label for="semestre">Numero de Categoria</label>
+          <select id="semestre" class="form-control">
+            <?php
+
+
+                  $res = $aDAO->mostrarProveedores();
+                                    
+
+                  if(mysqli_num_rows($res)>0){
+                    while($fila = mysqli_fetch_assoc($res)){
+                      echo "<option>". $fila["IdProveedor"] ."</option>";
+                    }
+
+                  }else{
+                    
+                  }
+            ?>
+          </select>
+          </div>
         </div>
+
+      <div class="form-group">
+        <label for="inputAddress">Cantidad por unidad</label>
+        <input type="number" class="form-control" id="inputAddress" placeholder="1234 Main St">
       </div>
       <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            <a href="#"> Aviso de privacidad </a>
-          </label>
-        </div>
+        <label for="inputAddress2">Precio unitario</label>
+        <input type="number" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Unidades En Stock</label>
+          <input type="number" class="form-control" id="inputCity">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="semestre">Descontinuado</label>
+          <select id="semestre" class="form-control">
+            <?php
+                echo "<option>No</option>";
+                echo "<option>Si</option>";
+                
+            ?>
+          </select>
+        </div>
+        
+      </div>
+      
       <button type="submit" class="btn btn-primary"> AGREGAR </button>
     </form>
 

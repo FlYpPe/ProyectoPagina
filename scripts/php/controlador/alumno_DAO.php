@@ -48,6 +48,12 @@
          return $res;
         
         }
+        
+        public function eliminarProducto($id){
+            $sql = "DELETE FROM productos WHERE idProducto ='$id'";
+            $res = mysqli_query($this->conexion->getConexion(), $sql);
+            return $res;
+        }
 
 
 

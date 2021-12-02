@@ -51,8 +51,9 @@ require_once('headAdm.php');
                 "<td>".$fila['PrecioUnitario']."</td>".
                 "<td>".$fila['UnidadesEnStock']."</td>".
                 "<td>".$fila['Descontinuado']."</td>".
-                "<td><a href='formulario_modificacion.php?id=". $fila["IdProducto"] ."'>Editar</a></td>"
-                                            
+                "<td><a href='formulario_modificacion.php?id=". $fila["IdProducto"] ."'>Editar</a> |
+                    <a href='../controlador/procesar_eliminar.php?id=". $fila["IdProducto"] ."' class='eliminar' >Eliminar</a>   </td>"
+                                           
                 );
 
             }
@@ -62,6 +63,8 @@ require_once('headAdm.php');
         }
         echo "</table> </div> </div>";
     ?>
+    <script src='confirmacion.js'></script>
     
+
 </body>
 </html>

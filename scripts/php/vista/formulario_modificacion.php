@@ -66,11 +66,38 @@ require_once('headAdm.php');
 
                 <input type='text' value='". $fila["NombreProducto"]."' name='n'></input>
                 
-                </td>".
+                </td>");
 
-                "<td><input type='text' value='". $fila["IdProveedor"]."' name='idP'></input></td>".
+                echo "<td><select id='Provedor' name='idP'>";
+            
+                  
+                  $aDA = new AlumnoDAO();
+                  $re = $aDA->mostrarProveedores();
+                  if(mysqli_num_rows($re)>0){
+                    while($fil = mysqli_fetch_assoc($re)){
+                      echo "<option>". $fil["IdProveedor"] ."</option>";
+                    }
+                  }else{    
+                }
 
-                "<td><input type='text' value='". $fila["IdCategoria"]."' name='idC'></input></td>".
+            
+          echo "</select></td>";
+          
+          echo "<td><select id='Categoria' name='idC'>";
+          
+                $re = $aDA->mostrarCategorias();
+                if(mysqli_num_rows($re)>0){
+                  while($fil = mysqli_fetch_assoc($re)){
+                    echo "<option>". $fil["IdCategoria"] ."</option>";
+                  }
+                }else{                    
+                }
+        
+                echo "</select></td>";
+
+
+
+                printf(
 
                 "<td><input type='text' value='". $fila["CantidadPorUnidad"]."' name='cu'></input></td>".
 
@@ -82,8 +109,8 @@ require_once('headAdm.php');
 
                 "<td><input type='submit' value='Actualizar'></input></td>"                       
                 
-            );      
-
+                  
+            );
             }
 
         }else{

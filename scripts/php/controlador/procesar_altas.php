@@ -4,27 +4,30 @@
 
     include('alumno_DAO.php');
 
-    //codigo para obtener los datos del formulario
+    $uDAO = new AlumnoDAO();
+    $id = $_POST["Id"];
+    $nombre = $_POST["Nombre"];
+    $provedor = $_POST["Provedor"];
+    $categoria = $_POST["Categoria"];
+    $cantidad = $_POST["Cantidad"];
+    $precio = $_POST["Precio"];
+    $stock = $_POST["Stock"];
+    $descont = $_POST["Descont"];
 
-    //Validacion ...(PENDIENTE)
 
     $aDAO = new AlumnoDAO();
-    $res = $aDAO->agregarProducto(5, 'C. Cerdo 3', 1, 1, '15', 10, 100, 'no');
+    $res = $aDAO->agregarProducto($id, $nombre, $provedor, $categoria, $cantidad, $precio, $stock, $descont);
     if($res){
-        //echo "YA CASI SOY INGENIERO INMORTAL !!!!";
+       
         header('location:../vista/fomulario_altas.php');
-        //OPCION 1
-        //<form
-        //<input type=hidden value=exito |fallo 
 
-        //OPCION 2
-        //enviar un mensaje de EXITO a traves de SESIONES
-           
+        
     }
     else{
-        //echo "MEJOR ME DEDICO A LAS REDES ='(   ";
+        
+
         header('location:../vista/fomulario_altas.php');
-        //enviar un mensaje de FALLO a traves de SESIONES
+        
     }
         
 

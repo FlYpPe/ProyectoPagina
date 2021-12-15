@@ -18,6 +18,18 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $e = $datos['e'];
         $s = $datos['s'];
         $c = $datos['c'];
+        /*
+        $id = $datos['nc'];
+        $nom = $datos['n'];
+        $prov = $datos['pa'];
+        $cat = $datos['sa'];
+        $cant = $datos['e'];
+        $pre = $datos['s'];
+        $stoc = $datos['c'];
+        $desc = $datos['c'];
+        $sql = "INSERT INTO productos (IdProducto, NombreProducto, IdProveedor, IdCategoria,
+             CantidadPorUnidad, PrecioUnitario, UnidadesEnStock, Descontinuado) VALUES (?,?,?,?,?,?,?,?)";
+        */
 
         $sql = "INSERT INTO alumnos VALUES('$nc','$n','$pa','$sa',$e,$s,'$c')";
         

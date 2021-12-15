@@ -78,7 +78,7 @@
             <div class="page-content page-container" id="page-content">
                 <div class="padding">
                     <div class="row" style="margin-left: 250px">
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <div class="card">
                                 <div class="card-header"><strong>Login</strong></div>
                                 <div class="card-body">
@@ -95,9 +95,10 @@
                                             <small id="Nombre" class="form-text text-muted">your password is saved
                                                 in encrypted form</small></div>
                                         <div class="form-group">
-                                            <div class="form-check"><input type="checkbox"
-                                                    class="form-check-input"><label class="form-check-label"> Check me
-                                                    out</label></div>
+
+                                        <div class="g-recaptcha" data-sitekey="6LcR_6EdAAAAABEZEe4zP7f1v95P_QAwsYnmuUZA"></div>
+                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
                                         </div> <button type="submit" class="btn btn-primary" onclick="return validacion()">Submit</button>
                                     </form>
 

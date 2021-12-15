@@ -11,10 +11,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         echo "No Hay cadena JSON";
     }else{
         $datos = json_decode($cadenaJSON, true);
-        $nc = $datos['nc'];
-       
-        $sql = "DELETE FROM alumnos WHERE Num_Control='$nc'";
         
+        $id = $datos['id'];
+        
+
+        $sql = "DELETE FROM productos WHERE idProducto ='$id'";
 
         $res = mysqli_query($conexion, $sql);
 

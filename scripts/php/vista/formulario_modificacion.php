@@ -116,8 +116,23 @@ require_once('headAdm.php');
         }else{
             echo "SIN registros para mostrar";
         }
-        echo "</table> </form> ";
+        echo "</table>";
+        echo "</form> ";
+        echo "<H2 style='color:red'> ";
+if (isset($_SESSION['dato_no'])) {
+  echo $_SESSION['dato_no'];
+}
+
+echo "</H2>";
+        
+       
+        
+        
+
     ?>
     
 </body>
 </html>
+<?php
+unset($_SESSION['dato_no']);
+?>

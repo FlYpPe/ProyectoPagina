@@ -1,7 +1,7 @@
 <?php
 
     //
-
+    session_start();
     include('alumno_DAO.php');
 
     $uDAO = new AlumnoDAO();
@@ -13,6 +13,17 @@
     $precio = $_POST["Precio"];
     $stock = $_POST["Stock"];
     $descont = $_POST["Descont"];
+
+    if (strlen($id)>0 && is_numeric($id)) {
+        $datos_validos = true;
+    }else {
+        $datos_validos = false;
+        $_SESSION['error_nc'] = " * !Dato Incorrecto (solo numeros)";
+    }
+
+    if (strlen($id)>0 && ctype_alpha()) {
+        # code...
+    }
 
 
     $aDAO = new AlumnoDAO();

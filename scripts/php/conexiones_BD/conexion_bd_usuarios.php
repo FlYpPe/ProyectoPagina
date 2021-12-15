@@ -2,14 +2,12 @@
 
 
     class ConexionBDUsuarios{
-        private static $conexion;
+        private $conexion;
         private $host = 'localhost:3306';
         private $usuario = 'root'; //MySQL
         private $contraseña = ''; //MySQL
         private $bd = 'Usuarios';
         private $contador;
-
-
 
         public function __construct(){
             
